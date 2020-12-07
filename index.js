@@ -3,12 +3,12 @@ const port = 8000;
 
 const app = express();
 
-
-
-
+// creating static middleware called asset( for accessing css and js files )
+app.use(express.static('assets'));
 
 // use express router
 app.use('/', require('./routes'));
+
 
 //setting up ejs as view engine 
 app.set('view engine', 'ejs');
