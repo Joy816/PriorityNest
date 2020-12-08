@@ -3,22 +3,76 @@
         <title>
             <%= title %>
         </title>
-
-        <style>
-            body{
-                margin:0;
-                background-color:rgb(132, 153, 13);
-                font-size: 2.5rem;
-
-            }
-
-        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href ="/css/login.css">
 
     </head>
 
     <body>
-        <h1> Welcome to the login page of <%= title %></h1>
+        <header>
+            <div class="header">
+                <img class = "logo" src ="/images/logo.png">
+                <!-- <a href="/images/logo.png" class="logo">PriorityNest</a> -->
+                <div class="header-right">
+                    <a class="" href="/">Home</a>
+                    <a class="" href="app">App</a>
+                    <a href="login">Login</a>
+                    <a href="signup">signup</a>
+                </div>
+                </div>
+        </header>
 
+        <section class="sec-body">
+            <h1 class="section-head">Welcome to the login page of PriorityNest</h1>
+            <form action="" method="post">
+            <div class="imgcontainer">
+                <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label><br>
+                <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+                <label for="psw"><b>Password</b></label><br>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                <button class ="loginbtn"type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" >
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="">password?</a></span>
+            </div>
+            </form>
+           
+
+        </section>
+
+        <!-- <section style =" height:20vh;"></section> -->
+
+        <footer class="foot">
+            <h1 class= "foot-header">Contact us </h1>
+
+            <div class ="forms">
+                <form> 
+                    
+                    <input type ="text " placeholder="Your Name"><br>
+                    
+                    <input type ="Email " placeholder="xyz@gmail.com "><br>
+                    
+                    <input type ="text " placeholder="Message" id ="msg"><br>
+                    <button type ="submit"> SEND MESSAGE </button>
+
+                </form>
+                
+            </div>
+
+        </footer>
+        
 
     </body>
 </html>
