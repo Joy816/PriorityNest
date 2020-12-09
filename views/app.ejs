@@ -3,21 +3,80 @@
         <title>
             <%= title %>
         </title>
+        <link rel="stylesheet" href ="/css/app.css">
+        <script src="https://kit.fontawesome.com/7693dbed32.js" crossorigin="anonymous"></script>
 
-        <style>
-            body{
-                margin:0;
-                background-color:rgb(53, 157, 175);
-                font-size: 2.5rem;
-
-            }
-
-        </style>
+      
 
     </head>
 
     <body>
-        <h1> Welcome to the App page of <%= title %></h1>
+        <header>
+            <div class="header">
+                <img class = "logo" src ="/images/logo.png">
+                <!-- <div class="logo-name">PriorityNest</div> -->
+                <div class="header-right">
+                    <a  href="/">Home</a>
+                    <a class="" href="#">
+                        <i class="far fa-bell fa-lg"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-user-circle fa-lg"></i>
+                    </a>
+                    <!-- <a href="signup">signup</a> -->
+                </div>
+                </div>
+        </header>
+        <section>
+            <div class ="section-header">
+                PriorityNest App
+            </div>
+            <div class="task-details">
+
+                <form action="priorityNest" method="POST">
+                    <label for="description">Description</label><br>
+                    <input type="text" placeholder="Description..." name="description" required><br>
+               
+                    <label for="category">Category</label><br>
+                    <select name="category" id="category"><br>
+                        <option value="volvo">Personal</option>
+                        <option value="saab">Work</option>
+                        <option value="opel">Academic</option>
+                        <option value="audi">Household</option>
+                        <option value="audi">Business</option>
+                        <option value="audi">Other</option>
+                      </select><br>
+               
+               
+                    <label for="set-date">Due Date</label><br>
+                    <input id="date"type="date" placeholder="start-date" name="set-date" >
+
+                </form>
+         
+                    
+                
+                <button type="submit">
+                    Add Task
+                </button>
+                <button type ="submit">
+                    delete task
+                </button>
+               
+
+            </div>
+            <div class="task">
+                <div class="description">
+                    <label for="description">Description</label><br>
+                    <input type="text" placeholder="Description..." name="description" required>
+                </div>
+                
+
+               
+
+            </div>
+
+        </section>
+        
 
 
     </body>
