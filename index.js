@@ -3,8 +3,22 @@ const port = 8000;
 
 const app = express();
 
+var toDoList =[
+    {
+        description:" A sample task",
+        category : "Work",
+        duedate :"26-12-2020"
+
+
+    }
+]
+
 // creating static middleware called asset( for accessing css and js files )
 app.use(express.static('assets'));
+
+//middleware for POST request
+app.use(express.urlencoded());
+
 
 // use express router
 app.use('/', require('./routes'));
@@ -13,6 +27,7 @@ app.use('/', require('./routes'));
 //setting up ejs as view engine 
 app.set('view engine', 'ejs');
 app.set('views','./views');
+
 
 
 app.listen(port , function (err){

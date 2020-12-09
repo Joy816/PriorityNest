@@ -31,6 +31,8 @@
             <div class ="section-header">
                 PriorityNest App
             </div>
+
+        <div style="width:70%; padding-left:20%;">
             <div class="task-details">
 
                 <form action="priorityNest" method="POST">
@@ -48,8 +50,8 @@
                       </select><br>
                
                
-                    <label for="set-date">Due Date</label><br>
-                    <input id="date"type="date" placeholder="start-date" name="set-date" >
+                    <label for="duedate">Due Date</label><br>
+                    <input id="date"type="date"  name="duedate" >
 
                 </form>
          
@@ -64,16 +66,40 @@
                
 
             </div>
+
+
+
             <div class="task">
-                <div class="description">
-                    <label for="description">Description</label><br>
-                    <input type="text" placeholder="Description..." name="description" required>
-                </div>
+                <ul>
+                    <% for (let i of toDo_App){ %>
+                         <li>
+                            <div class="task_div">
+                   
+                                <span class="task_description">
+                                    <input type="checkbox" name="desc" >
+                                    <!-- <label >This is a sample description  </label><br> -->
+                                    <label for ="desc"><%=i.description %> </label><br>
+                                  
+                                </span>
+                                
+                                <!-- <span class="task_category">Work</span><br> -->
+                                <span class="task_category"><%=i.category %></span><br>
+                               <span id="calender-icon"><i class="fas fa-calendar-alt"></i></span>
+                                <!-- <span class="task_date">26-12-2020</span> -->
+                                <span class="task_date"><%=i.duedate %></span>
+            
+                            </div>
+                        </li>
+                    <%} %>
+
+                </ul>
+                
                 
 
                
 
             </div>
+        </div>
 
         </section>
         
