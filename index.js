@@ -3,21 +3,18 @@ const port = 8000;
 
 const app = express();
 
-var toDoList =[
-    {
-        description:" A sample task",
-        category : "Work",
-        duedate :"26-12-2020"
+//configuring mongoose |( mongoose is object data modelling for mongodb and node.js)
+const db = require('./config/mongoose');
+
+//fetching modelschema
+const Todo = require ('./models/todo');
 
 
-    }
-]
 
 // creating static middleware called asset( for accessing css and js files )
 app.use(express.static('assets'));
 
-//middleware for POST request
-app.use(express.urlencoded());
+
 
 
 // use express router
@@ -27,6 +24,24 @@ app.use('/', require('./routes'));
 //setting up ejs as view engine 
 app.set('view engine', 'ejs');
 app.set('views','./views');
+
+
+//deleting entries 
+
+app.get('/delete-task' , function (req,res){
+
+    let id = req.query.id;
+
+    Todo.findByIdAndDelete( id , function (err ){
+        if (err){
+            console.log (err);
+            return ;
+        }
+
+        return res.redirect('/app');  
+    });
+   
+})
 
 
 

@@ -35,34 +35,49 @@
         <div style="width:70%; padding-left:20%;">
             <div class="task-details">
 
-                <form action="priorityNest" method="POST">
-                    <label for="description">Description</label><br>
-                    <input type="text" placeholder="Description..." name="description" required><br>
+                <form action="/app" method="POST">
+                    
+                    <div>
+                        <label for="description">Description</label><br>
+                        <input type="text" placeholder="Description..." name="description" required>
+                    </div>
+                    
                
-                    <label for="category">Category</label><br>
-                    <select name="category" id="category"><br>
-                        <option value="volvo">Personal</option>
-                        <option value="saab">Work</option>
-                        <option value="opel">Academic</option>
-                        <option value="audi">Household</option>
-                        <option value="audi">Business</option>
-                        <option value="audi">Other</option>
-                      </select><br>
+                    <div>
+                        <label for="category">Category</label><br>
+                        <select name="category" id="category"><br>
+                            <option >Personal</option>
+                            <option >Work</option>
+                            <option >Academic</option>
+                            <option >Household</option>
+                            <option >Business</option>
+                            <option >Other</option>
+                        </select>
+                    </div>
+                      
                
                
-                    <label for="duedate">Due Date</label><br>
-                    <input id="date"type="date"  name="duedate" >
+                    <div>
+                        <label for="duedate">Due Date</label><br>
+                        <input id="date"type="date"  name="duedate" >
+                    </div>
+                    
+
+                    <span>
+                        <button type="submit">
+                            Add Task
+                        </button>
+                    </span>
+                    
+
+                  
 
                 </form>
          
                     
                 
-                <button type="submit">
-                    Add Task
-                </button>
-                <button type ="submit">
-                    delete task
-                </button>
+                
+                
                
 
             </div>
@@ -76,17 +91,27 @@
                             <div class="task_div">
                    
                                 <span class="task_description">
-                                    <input type="checkbox" name="desc" >
+                                    <input  class ="check" type="checkbox" >
                                     <!-- <label >This is a sample description  </label><br> -->
                                     <label for ="desc"><%=i.description %> </label><br>
                                   
                                 </span>
                                 
+                                
                                 <!-- <span class="task_category">Work</span><br> -->
                                 <span class="task_category"><%=i.category %></span><br>
                                <span id="calender-icon"><i class="fas fa-calendar-alt"></i></span>
                                 <!-- <span class="task_date">26-12-2020</span> -->
-                                <span class="task_date"><%=i.duedate %></span>
+                                <span class="task_date"><%=i.duedate %></span><br>
+
+                                <span class ="delete-task">
+                                    <a href ="/delete-task/?id=<%= i._id%>">
+                                       <!-- <i   id ="icon"  class="far fa-times-circle" aria-hidden="true"></i> -->
+                                      <button class ="del-btn"> delete me </button>
+                                    </a>
+                                </span>
+
+                                
             
                             </div>
                         </li>
@@ -104,6 +129,12 @@
         </section>
         
 
+    <script src="/js/appjs.js"> </script>
 
+    
+
+
+
+ 
     </body>
 </html>

@@ -66,6 +66,7 @@
   color:#1e6b87;
   text-align:center;
   padding-top:20px;
+  padding-bottom:20px;
 }
 
 /* header section styling ends here  */
@@ -75,7 +76,7 @@
     display:inline-block;
     width:39%;
     /* height:100vh; */
-    border:2px solid red;
+    /* border:2px solid red; */
 }
 
 .task-details input {
@@ -94,6 +95,7 @@
     outline:none;
  
     padding-top:10px;
+    /* border-bottom: 1px solid grey; */
 } 
 .task-details input{
     width:100%;
@@ -101,18 +103,45 @@
     outline:none;
   
     padding-top:10px;
+    
  
 }
 
 
 #date{
-    width:30%;
+    width:40%;
 
 }
 #category{
-    width: 30%;
+    width: 40%;
 }
 
+
+form{
+  padding:10px;
+}
+form label{
+  font-family: sans-serif;
+  font-size:1em;
+  color:#1e6b87;
+  padding-top:5px;
+}
+form div{
+  border-top: 1px solid grey;
+  padding-top:5px;
+  
+}
+
+form span {
+  padding-left:35%;
+  padding-top:10px;
+
+}
+form span button {
+  background-color:#05679c;
+  border-radius: 2%;
+  color:palegoldenrod;
+}
 
 
 /* task section */
@@ -121,24 +150,26 @@
     width:60%;
     /* height:100vh; */
     min-height:50vh;
-    border:2px solid green;
+    border-left:2px solid darkgrey;
     float:right;
 }
 .task_category{
   float:right;
   border:1px solid ;
-  background-color:magenta;
+  background-color:lightblue;
   padding:10px;
   /* border:8px; */
-  border-radius: 8%;
+  border-radius: 5%;
   /* border-left:70%; */
   /* border:1px solid red; */
+  width:70px;
+  text-align: center;
 }
 
 .task_description{
   font-family: sans-serif;
   font-size:1.2em;
-  color:grey;
+  color:#1e6b87;
   padding-left:4px;
   /* border:1px solid red; */
   overflow: hidden;
@@ -151,7 +182,7 @@
 .task_date{
   font: 1em sans-serif;
   padding-left:7px;
-  color:grey;
+  color:#1e6b87;
   /* border:1px solid red; */
 }
 #calender-icon{
@@ -166,4 +197,35 @@
 
 li{
   list-style-type: none;
+}
+
+/* delete-task */
+
+.delete-task{
+  display: inline-block;
+  padding-left:40%;
+  height:10px;
+}
+
+
+.del-btn{
+  display:block;
+  background-color:#05679c;
+  border-radius: 2%;
+  color:palegoldenrod;
+}
+
+
+.delete-task a {
+  text-decoration:none;
+}
+
+/* a{
+  text-decoration:none;
+} */
+
+
+input:checked {
+  /* background: #F9F9F9; */
+  text-decoration: line-through;
 }
